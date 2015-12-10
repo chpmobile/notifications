@@ -72,7 +72,11 @@ function createDialog1() {
         	
 function dialogDismissed(buttonIndex) {
 	
-	if(buttonIndex==1) new Toast({content: "You're easily pleased", duration: 3000});
+	if(buttonIndex==1)
+     {
+        new Toast({content: "You're easily pleased", duration: 3000});
+            createNotification();
+        }
    	else if(buttonIndex==2) new Toast({content: 'It is rather boring.', duration: 3000});
 
 }
@@ -101,7 +105,7 @@ function createNotification() {
 	window.plugin.notification.local.add({ 
     	id: 		1,
         title: 		"Hey you",
-        message: 	"This is an example notification",
+        message: 	"Go back to work",
         date: 		notificationTime, 
         badge: 		notification_count++
    	});
