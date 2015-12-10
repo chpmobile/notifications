@@ -37,18 +37,7 @@ function createMessage(){
     //so we can add this using toast.js
     new Toast({content: 'An example message.', duration: 2000}); 	
 }
-     function createMessage1(){      
-    //phoneGap and jQueryMobile do not support toast messages directly
-    //so we can add this using toast.js
-
-    if (navigator.notification.buttons='yes') {
-    new Toast({content: 'take a break and eat some food.', duration: 2000});   
-    }
-    else {
-         new Toast({content: 'corry on working.', duration: 2000}); 
-    } 
-
-}
+   
      
 
 function createDialog() {
@@ -71,11 +60,11 @@ function createDialog1() {
       
     navigator.notification.confirm(
         'Are you hungry?',  // message
-        dialogDismissed,         // callback
+        dialogDismissed1,         // callback
         'An example dialog!',            // title
         ['yes', 'no']                  // buttons
     );
-    createMessage1();
+    
 }
 
         	
@@ -87,7 +76,15 @@ function dialogDismissed(buttonIndex) {
    	else if(buttonIndex==2) new Toast({content: 'It is rather boring.', duration: 3000});
 
 }
+function dialogDismissed1(buttonIndex) {
+    
+    if (buttonIndex==1) new Toast({content: "Take a break have a snack", duration: 3000});
+    
 
+    
+    else if(buttonIndex==2) new Toast({content: 'carry working.', duration: 3000});
+
+}
    
    
 function createNotification() {
@@ -96,7 +93,7 @@ function createNotification() {
     //generate a time to post notification
     //
     var currentTime = new Date().getTime(); //current time
-    var notificationTime = new Date(currentTime + 1000); //delayed time  - add 1 second
+    var notificationTime = new Date(currentTime + 30000); //delayed time  - add 1 second
     			
     //
     //setup notification
