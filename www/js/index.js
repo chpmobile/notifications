@@ -5,6 +5,12 @@ $(document).on('pageinit', function() {
 	$('#messageButton').on('click', function() {
 		createMessage();
 	});
+        $('#messageButton1').on('click', function() {
+        createMessage1();
+         });
+            $('#messageButton2').on('click', function() {
+        createMessage();
+         });
 	
 	$('#dialogButton').on('click', function() {
 		createDialog();
@@ -23,9 +29,9 @@ $(document).on('pageinit', function() {
 function createMessage(){		
 	//phoneGap and jQueryMobile do not support toast messages directly
     //so we can add this using toast.js
-    new Toast({content: 'An example message.', duration: 1000}); 	
+    new Toast({content: 'An example message.', duration: 2000}); 	
 }
-        	
+     
 
 function createDialog() {
 
